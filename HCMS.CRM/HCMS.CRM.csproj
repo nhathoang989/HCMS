@@ -234,13 +234,15 @@
       <DependentUpon>ApplicationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Framework\ApplicationViewModel.cs" />
+    <Compile Include="Framework\BaseControlWindow.cs" />
     <Compile Include="Framework\DelegateCommand.cs" />
     <Compile Include="Framework\ObjectBase.cs" />
     <Compile Include="Framework\RelayCommand.cs" />
     <Compile Include="Framework\ViewModelBase.cs" />
     <Compile Include="Helpers\ApiHelper.cs" />
     <Compile Include="Helpers\MenuHelper.cs" />
-    <Compile Include="Models\AuthenticatedUser.cs" />
+    <Compile Include="Helpers\PasswordHelper.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Ultilities\common.cs" />
     <Compile Include="UserControls\UCHome.xaml.cs">
       <DependentUpon>UCHome.xaml</DependentUpon>
@@ -253,8 +255,10 @@
     </Compile>
     <Compile Include="ViewInterfaces\IDialogView.cs" />
     <Compile Include="ViewInterfaces\IMainView.cs" />
+    <Compile Include="ViewInterfaces\IControlView.cs" />
     <Compile Include="ViewInterfaces\IPageViewModel.cs" />
     <Compile Include="ViewInterfaces\IView.cs" />
+    <Compile Include="ViewModels\AuthViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Views\Converters\EmptyStringConverter.cs" />

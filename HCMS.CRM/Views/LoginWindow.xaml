@@ -7,6 +7,26 @@
              mc:Ignorable="d" 
              d:DesignHeight="{StaticResource ScreenHeight}" d:DesignWidth="{StaticResource ScreenWidth}">
     <Grid>
-            
+        <Label Content="{Binding lblUsername}" Height="28" HorizontalAlignment="Left"
+Margin="154,28,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="{Binding lblPassword}" Height="28" HorizontalAlignment="Left"
+Margin="154,62,0,0" Name="label2" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="274,33,0,0"
+
+Name="usernameTB" Text="{Binding Username}" VerticalAlignment="Top" Width="120" />
+
+        <PasswordBox Name="pbPassword" Height="23" HorizontalAlignment="Left" 
+                     Margin="274,67,0,0"
+                     VerticalAlignment="Top" Width="120" />
+
+        <Button Content="{Binding lblLogin}" Height="23" HorizontalAlignment="Left" Margin="319,104,0,0"
+            Name="LoginBTN" VerticalAlignment="Top" Width="75" Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=pbPassword}"
+                 />
+
+        <Button Content="Log out" Height="23" HorizontalAlignment="Left"
+            Margin="154,104,0,0" Name="logoutBTN" VerticalAlignment="Top" Width="75" Visibility="Collapsed"  />
+
+
     </Grid>
 </UserControl>

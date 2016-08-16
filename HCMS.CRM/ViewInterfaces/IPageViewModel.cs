@@ -8,6 +8,8 @@ namespace HCMS.CRM.ViewInterfaces
 {
     public interface IPageViewModel
     {
-        string Name { get; }
+        string Title { get; }
+        string Key { get; }
+
     }
 }

@@ -24,11 +24,18 @@ namespace HCMS.CRM.Framework
         public ApplicationViewModel()
         {
             // Add available pages
-            PageViewModels.Add(new HomeViewModel());
             PageViewModels.Add(new LoginViewModel());
+            PageViewModels.Add(new HomeViewModel());
 
             // Set starting page
-            CurrentPageViewModel = PageViewModels[0];
+            if (!App.currUser.IsAuth)
+            {
+                CurrentPageViewModel = PageViewModels[0];
+            }
+            else {
+                CurrentPageViewModel = PageViewModels[1];
+            }
+            
         }
 
         #region Properties / Commands
@@ -40,8 +47,8 @@ namespace HCMS.CRM.Framework
                 if (_changePageCommand == null)
                 {
                     _changePageCommand = new RelayCommand(
-                        p => ChangeViewModel((IPageViewModel)p),
-                        p => p is IPageViewModel);
+                        p => ChangeViewModel((string)p),
+                        p => p is string);
                 }
 
                 return _changePageCommand;
@@ -81,6 +88,16 @@ namespace HCMS.CRM.Framework
 
         private void ChangeViewModel(IPageViewModel viewModel)
         {
+            if (!PageViewModels.Contains(viewModel))
+                PageViewModels.Add(viewModel);
+
+            CurrentPageViewModel = PageViewModels
+                .FirstOrDefault(vm => vm == viewModel);
+        }
+
+        private void ChangeViewModel(string pageArg)
+        {
+            var viewModel = Helpers.MenuHelper.GetPageView(pageArg);
             if (!PageViewModels.Contains(viewModel))
                 PageViewModels.Add(viewModel);
 

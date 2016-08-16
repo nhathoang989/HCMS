@@ -1,4 +1,8 @@
-﻿using HCMS.CRM.UserControls;
+﻿using HCMS.CRM.Framework;
+using HCMS.CRM.Helpers;
+using HCMS.CRM.Ultilities;
+using HCMS.CRM.UserControls;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,14 +26,8 @@ namespace HCMS.CRM.Views
     {
         public LoginWindow()
         {
-            if (!App.currUser.IsAuth)
-            {
                 InitializeComponent();
-            }
-            else
-            {                
-                MessageBox.Show("Already logged in");
-            }
+           
         }
     }
 }

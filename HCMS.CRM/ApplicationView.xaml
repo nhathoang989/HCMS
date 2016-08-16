@@ -3,11 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HCMS.CRM"
+        xmlns:local="clr-namespace:HCMS.CRM"        
         xmlns:views="clr-namespace:HCMS.CRM.Views"
         xmlns:viewModels="clr-namespace:HCMS.CRM.ViewModels"
-        Title="ApplicationView" Height="600" Width="960">
+        xmlns:materialMenu="clr-namespace:MaterialMenu;assembly=MaterialMenu"
+        Title="HCRM - Home" Height="600" Width="960"
+        ResizeMode="NoResize" ShowInTaskbar="True" SizeToContent="Manual" WindowStartupLocation="CenterScreen"
+        WindowState="Normal">
+
     <Window.Resources>
+        <views:NullableBooleanConverter x:Key="booleanConverter" />
+        <Style TargetType="MenuItem">
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True" >
+                    <Setter Property="Background" Value="{DynamicResource SelectedBackgroundBrush}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
             <views:Home />
         </DataTemplate>
@@ -17,19 +29,46 @@
     </Window.Resources>
 
     <DockPanel>
-        <Border DockPanel.Dock="Left" BorderBrush="Black" BorderThickness="0,0,1,0">
+        <Border DockPanel.Dock="Left" Height="auto" x:Name="MainMenuBorder" BorderThickness="0" Grid.Row="2" Width="300" HorizontalAlignment="Center" >
+            <materialMenu:SideMenu Name="MainMenu" Theme="Danger" ButtonBackground="#FF567DB1" ButtonHover="{DynamicResource ScrollBarThumbPressedBorderBrush}" Background="{DynamicResource ExpanderToggleArrow2Stroke}">
+                <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <StackPanel Orientation="Vertical">
+                        <Border Background="#337AB5">
+                            <Grid Margin="10">
+                                <TextBox Height="100" BorderThickness="0" Background="Transparent"
+                                VerticalContentAlignment="Center" FontFamily="Calibri" FontSize="18"
+                                Foreground="WhiteSmoke" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center">Welcome</TextBox>
+                            </Grid>
+                        </Border>                      
+                        <ItemsControl ItemsSource="{Binding PageViewModels}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <MenuItem Header="{Binding Title}" Command="{Binding DataContext.ChangePageCommand, 
+                                        RelativeSource={RelativeSource AncestorType={x:Type materialMenu:SideMenu}}}"
+                                        CommandParameter="{Binding Key}"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </materialMenu:SideMenu>
+        </Border>
+        <Border x:Name="MainScreen" BorderThickness="0" Grid.Row="3" Background="{DynamicResource CheckBoxBackgroundFillBrush}">
+            <ContentControl Content="{Binding CurrentPageViewModel}" />
+        </Border>
+        <!--<Border DockPanel.Dock="Left" BorderBrush="Black" BorderThickness="0,0,1,0">
             <ItemsControl ItemsSource="{Binding PageViewModels}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Button Content="{Binding Name}"
+                        <Button Content="{Binding Title}"                                   
                                 Command="{Binding DataContext.ChangePageCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
-                                CommandParameter="{Binding }"
+                                CommandParameter="{Binding Key}"
                                 Margin="2,5"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </Border>
 
-        <ContentControl Content="{Binding CurrentPageViewModel}" />
+        <ContentControl Content="{Binding CurrentPageViewModel}" />-->
     </DockPanel>
 </Window>

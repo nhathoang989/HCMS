@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Height="300" Width="300">
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Title}" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

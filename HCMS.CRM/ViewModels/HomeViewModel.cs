@@ -10,13 +10,39 @@ using System.Threading.Tasks;
 namespace HCMS.CRM.ViewModels
 {
     class HomeViewModel : ObjectBase, IPageViewModel
-    {
-        public string Name
+    {        
+        public string Title
+        {
+            get
+            {
+                return "Home Page";
+            }
+        }
+
+        public string Key
         {
             get
             {
                 return "Home";
             }
+        }
+
+        public object DataContext
+        {
+            get
+            {
+                return DataContext;
+            }
+
+            set
+            {
+                DataContext = value;
+            }
+        }
+
+        public void Close()
+        {
+            throw new NotImplementedException();
         }
     }
 }

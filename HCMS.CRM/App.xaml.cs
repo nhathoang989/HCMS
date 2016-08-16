@@ -24,7 +24,7 @@ namespace HCMS.CRM
     public partial class App : Application
     {
         public static LoginViewModel currUser = new LoginViewModel();
-        public static string baseWebAPIAddress = "http://localhost:9000/";
+        public static string baseWebAPIAddress = "http://localhost:7000/";
         //public static string baseWebSignalRAddress = "http://localhost:8080/";
 
         private const string Guid = "250C5597-BA73-40DF-B2CF-DD644F044834";
