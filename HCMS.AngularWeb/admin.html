@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="AdminApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/Content/Admin/bootstrap/css/bootstrap.min.css"
+          media="screen" />
+    <link rel="stylesheet" type="text/css" href="/Content/Admin/css/fonts/style.css"
+          media="screen" />
+    <link rel="stylesheet" type="text/css" href="/Content/Admin/css/screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/Content/Admin/css/icons/icol16.css"
+          media="screen" />
+    <link rel="stylesheet" type="text/css" href="/Content/Admin/css/style.css" media="screen" />
+    <script type="text/javascript" src="/Content/Admin/js/libs/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/Content/Admin/js/libs/jquery.placeholder.min.js"></script>
+    <script type="text/javascript" src="/Content/Admin/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Content/Admin/js/citi.js"></script>
+    <title>eBoard</title>
+    <base href="/admin">
+</head>
+<body id="body">
+    <!-- Header -->
+    <div id="mws-header" class="clearfix" data-ng-controller="indexController">
+        <div id="mws-logo-container">
+            <div id="mws-logo-wrap">
+                <img src="/Content/Admin/images/logo.png" alt="">
+            </div>
+        </div>
+        <div data-ng-hide="!authentication.isAuth" id="mws-user-tools" class="clearfix">
+            <div id="mws-user-info" class="mws-inset">
+                <div id="mws-user-photo">
+                    <img id="imgAvatar" src="{{authentication.avatar}}" alt="User Photo" />
+                </div>
+                <div id="mws-user-functions">
+                    <div id="mws-username">
+                        Chào bạn,
+                        <a href="/admin/profile">
+                            <span class="bold" ng-bind="authentication.userName" />
+                        </a>
+                    </div>
+                    <ul>
+                        <li><a href="/admin/change-password">Đổi mật khẩu</a></li>
+                        <li>
+                            <a href="" data-ng-click="logOut()">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mws-wrapper">
+        <div id="mws-sidebar-stitch">
+        </div>
+        <div id="mws-sidebar-bg">
+        </div>
+        <div id="mws-sidebar">
+            <div id="mws-navigation">
+                <ul>
+                    <li><a href="/Admin/AdminContact.aspx"><i class="icon-leaf"></i>Liên hệ</a></li>
+                    <li class="active"><a href="/Admin/Default.aspx"><i class="icon-home"></i>eBoard</a></li>
+                    <li class="rightMenu">
+                        <span><i class="icon-list"></i>Chuyên mục</span>
+                        <ul class="ulRightMenu" style="display: block;">
+                            <li><a href="/Admin/AdminPageNew.aspx"><i class="icon-pencil"></i>Đăng chuyên mục mới</a></li>
+                            <li>
+                                <a href="/Admin/AdminPage.aspx">
+                                    <i class="icon-list"></i>Tất cả chuyên
+                                    mục
+                                </a>
+                            </li>
+                            <li><a href="/Admin/AdminPageDeleted.aspx"><i class="icon-trash"></i>Thùng rác</a></li>
+                        </ul>
+                    </li>
+                    <li class="rightMenu">
+                        <span><i class="icon-file"></i>Bài viết</span>
+                        <ul class="ulRightMenu" style="display: block;">
+                            <li><a href="/Admin/AdminArticleNew.aspx"><i class="icon-pencil"></i>Đăng bài mới</a></li>
+                            <li>
+                                <a href="/Admin/AdminArticle.aspx">
+                                    <i class="icon-newspaper"></i>Tất cả bài
+                                    viết
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href=""><i class="icol-application"></i> Chuyên mục bài viết</a>
+                            </li>
+                            <li><a href="/Admin/AdminArticleDeleted.aspx"><i class="icol-bin-closed"></i>Thùng rác</a></li>
+                        </ul>
+                    </li>
+                    <li class="rightMenu">
+                        <span><i class="icon-support"></i>Hỏi đáp</span>
+                        <ul class="ulRightMenu" style="display: block;">
+                            <li><a href="/Admin/AdminFAQNew.aspx"><i class="icon-pencil"></i>Đăng Câu hỏi mới</a></li>
+                            <li><a href="/Admin/AdminFAQ.aspx"><i class="icon-support"></i>Tất cả FAQ</a></li>
+                            <li><a href="/Admin/AdminFAQDeleted.aspx"><i class="icon-trash"></i>Thùng rác</a></li>
+                        </ul>
+                    </li>
+                    <li class="rightMenu">
+                        <span><i class="icon-rocket"></i>Tuyển dụng</span>
+                        <ul class="ulRightMenu" style="display: block;">
+                            <li>
+                                <a href="/Admin/AdminRecruitNew.aspx">
+                                    <i class="icon-pencil"></i>Đăng tuyển dụng
+                                    mới
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/AdminRecruit.aspx">
+                                    <i class="icon-rocket"></i>Tất cả tuyển
+                                    dụng
+                                </a>
+                            </li>
+                            <li><a href="/Admin/AdminRecruitDeleted.aspx"><i class="icon-trash"></i>Thùng rác</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/Admin/AdminBanner.aspx"><i class="icon-television"></i>Quảng cáo</a></li>
+                    <li><a href="/Admin/AdminNewsletter.aspx"><i class="icon-envelope"></i>Newsletter</a></li>
+
+                    <li class="rightMenu">
+                        <span><i class="icon-user"></i>Tài khoản</span>
+                        <ul class="ulRightMenu" style="display: block;">
+                            <li>
+                                <a href="/Admin/AdminRoles.aspx">
+                                    <i class="icon-users"></i>Cơ cấu tổ
+                                    chức
+                                </a>
+                            </li>
+                            <li><a href="/Admin/AdminAccounts.aspx"><i class="icon-user"></i>Người dùng</a></li>
+                        </ul>
+                    </li>
+                    <li class="rightMenu">
+                        <span><i class="icon-cogs"></i>Cấu hình</span>
+                        <ul class="ulRightMenu" style="display: block;">
+                            <li><a href="/Admin/AdminSettingNew.aspx"><i class="icon-wrench"></i>Thêm mới cấu hình</a></li>
+                            <li><a href="/Admin/AdminSetting.aspx"><i class="icon-list"></i>Danh sách</a></li>
+                            <%--
+                            <li><a href=""><i class="icol-email"></i>Liên hệ</a></li>--%>
+                        </ul>
+                    </li>
+                    <li class="rightMenu">
+                        <span><i class="icon-broadcast"></i>Cấu hình Email</span>
+                        <ul class="ulRightMenu" style="display: block;">
+                            <li>
+                                <a href="/Admin/AdminNotificationNew.aspx">
+                                    <i class="icon-pencil"></i>Thêm mới cấu hình
+                                    email
+                                </a>
+                            </li>
+                            <li><a href="/Admin/AdminNotification.aspx"><i class="icon-list"></i>Danh sách</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a><i class="icon-map-marker"></i>Tỉnh thành, quận huyện</a>
+                        <ul class="ulRightMenu" style="display: block;">
+                            <li><a href="/Admin/AdminProvince.aspx"><i class="icon-compass"></i>Tỉnh thành</a></li>
+                            <li><a href="/Admin/AdminDistrict.aspx"><i class="icon-map-marker"></i>Quận huyện</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="mws-container" class="clearfix">
+            <div class="container">
+                <div ng-view class="view mws-panel grid_8 mws-collapsible">
+
+                </div>
+            </div>
+            <div id="mws-footer">
+                Copyright &copy; 2012 by Cititech Corporation. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="/scripts/angular-local-storage.min.js"></script>
+    <script src="/scripts/loading-bar.min.js"></script>
+    <script src="/Scripts/TweenMax.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+    <!-- Load app main script -->
+    <script src="/appAdmin/appAdmin.js"></script>
+    <!-- Load controllers-->
+    <script src="/appAdmin/controller/homeController.js"></script>
+    <script src="/appAdmin/controller/categoryController.js"></script>
+    <script src="appAdmin/controller/indexController.js"></script>
+
+    <script src="/app/services/authInterceptorService.js"></script>
+    <script src="/app/services/authService.js"></script>
+</body>
+</html>

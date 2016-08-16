@@ -1,0 +1,4 @@
+﻿ 2016-07-02 03:12:34,416 [P50880/D2/T110] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-07-01 03:12:34
+ 2016-07-02 07:12:34,620 [P50880/D2/T110] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-07-01 07:12:34
+ 2016-07-02 10:45:02,426 [P50880/D2/T316] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: Login attempt succeeded for username nhathoang989@gmail.com from IP address ::1
+ 2016-07-02 10:45:02,426 [P50880/D2/T316] INFO  Umbraco.Core.Security.BackOfficeSignInManager - Event Id: 0, state: User: nhathoang989@gmail.com logged in from IP address ::1

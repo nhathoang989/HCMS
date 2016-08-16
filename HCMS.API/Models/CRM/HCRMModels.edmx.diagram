@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="334e6ff2a2a940f6960e981d4bf641f3" Name="Diagram1" ZoomLevel="99">
+        <EntityTypeShape EntityType="HCRMModel.CRM_Customer" Width="1.5" PointX="2.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Customer_Address" Width="1.5" PointX="5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Menu" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Product_Details_Template" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Products" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Provider" Width="1.5" PointX="5.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Provider_Address" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Receipt_Delivery" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Receipt_Details" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Receipt_Return" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Receipt_Warehouse" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Role_Menu" Width="1.5" PointX="8" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Tags" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HCRMModel.sysdiagram" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="HCRMModel.FK_CRM_Customer_Address_CRM_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="HCRMModel.FK_CRM_Role_Menu_CRM_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="HCRMModel.FK_CRM_ReceiptDetails_CRM_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="HCRMModel.FK_CRM_Provider_Address_CRM_Provider" ManuallyRouted="false" />
+        <AssociationConnector Association="HCRMModel.FK_CRM_ReceiptDetails_CRM_Receipt" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Product_Property" Width="1.5" PointX="3" PointY="12.375" />
+        <AssociationConnector Association="HCRMModel.FK_CRM_Product_Property_CRM_Products" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

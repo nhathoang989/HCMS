@@ -1,0 +1,64 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:HCMS.CRM.Views"
+        xmlns:materialMenu="clr-namespace:MaterialMenu;assembly=MaterialMenu"
+        xmlns:awe="http://schemas.awesomium.com/winfx" x:Class="HCMS.CRM.MainWindow"
+        mc:Ignorable="d"
+        Title="HCRM - Home" Height="600" Width="960"
+        ResizeMode="NoResize" ShowInTaskbar="True" SizeToContent="Manual" WindowStartupLocation="CenterScreen"
+    WindowState="Normal"    
+    Loaded="Window_Loaded" WindowStyle="ToolWindow" Closed="Window_Closed"
+    
+        >
+    <Window.Resources>
+        <local:NullableBooleanConverter x:Key="booleanConverter" />
+        <Style TargetType="MenuItem">
+            <Style.Triggers>
+                <Trigger Property="IsFocused" Value="True" >
+                    <Setter Property="Background" Value="{DynamicResource SelectedBackgroundBrush}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <Border DockPanel.Dock="Left" Height="auto" x:Name="MainMenuBorder" BorderThickness="0" Grid.Row="2" Width="300" HorizontalAlignment="Center" >
+            <materialMenu:SideMenu Name="MainMenu" Theme="Danger" ButtonBackground="#FF567DB1" ButtonHover="{DynamicResource ScrollBarThumbPressedBorderBrush}" Background="{DynamicResource ExpanderToggleArrow2Stroke}">
+                <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <StackPanel Orientation="Vertical">
+                        <Border Background="#337AB5">
+                            <Grid Margin="10">
+                                <TextBox Height="100" BorderThickness="0" Background="Transparent"
+                                VerticalContentAlignment="Center" FontFamily="Calibri" FontSize="18"
+                                Foreground="WhiteSmoke" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center">Welcome</TextBox>
+                            </Grid>
+                        </Border>
+                        <!--<materialMenu:MenuButton Text="Administration">
+                            <materialMenu:MenuButton.Children>
+                                <materialMenu:MenuButton Text="Packing"></materialMenu:MenuButton>
+                                <materialMenu:MenuButton Text="Logistics"></materialMenu:MenuButton>
+                                <materialMenu:MenuButton Text="Org"></materialMenu:MenuButton>
+                                <materialMenu:MenuButton Text="SaveChanges"></materialMenu:MenuButton>
+                            </materialMenu:MenuButton.Children>
+                        </materialMenu:MenuButton>
+                        <materialMenu:MenuButton MouseDown="MenuButton_MouseDown" Text="Logistics"></materialMenu:MenuButton>-->
+
+
+                    </StackPanel>
+
+                </ScrollViewer>
+            </materialMenu:SideMenu>
+        </Border>
+        <Border x:Name="MainScreen" BorderThickness="0" Grid.Row="3" Background="{DynamicResource CheckBoxBackgroundFillBrush}">
+            <Grid Name="MainContainer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+               
+            </Grid>            
+        </Border>        
+    </DockPanel>
+</Window>

@@ -1,0 +1,79 @@
+﻿<div class="mws-panel-header">
+    <span><i class="icon-table"></i>Cititech eBoard Solution</span>
+</div>
+<div class="mws-panel-body no-padding ">
+    <div class="dataTables_wrapper">
+        <div class="filter" runat="server" visible="false">
+            Tìm kiếm bài viết:
+            <input style="width: 300px;" type="text" name="" id="" />
+            <span class="divider"></span>Trang:
+            <select name="" id="">
+                <option value="">Tất cả</option>
+            </select>
+            <button class="btn btn-primary">
+                <i class="icon-search"></i>
+            </button>
+        </div>
+        <table class="mws-table mws-datatable">
+            <tr>
+                <td class="colOne">
+                    Chuyên mục
+                </td>
+                <td>
+                    <asp:Literal id="ltrCountPage" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td class="colOne">
+                    Bài viết
+                </td>
+                <td>
+                    <asp:Literal id="ltrCountArticle" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td class="colOne">
+                    FAQ
+                </td>
+                <td>
+                    <asp:Literal id="ltrCountFAQ" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td class="colOne">
+                    Tài sản
+                </td>
+                <td>
+                    <asp:Literal id="ltrCountProperty" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td class="colOne">
+                    Thành viên
+                </td>
+                <td>
+                    <asp:Literal id="ltrCountAccount" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td class="colOne">
+                    Đăng ký mua
+                </td>
+                <td>
+                    <asp:Literal id="ltrCountBuy" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td class="colOne">
+                    Inquiry
+                </td>
+                <td>
+                    <asp:Literal id="ltrCountInquiry" runat="server" />
+                </td>
+            </tr>
+        </table>
+        <div class="dataTables_paginate paging_full_numbers">
+            &nbsp;
+        </div>
+    </div>
+</div>

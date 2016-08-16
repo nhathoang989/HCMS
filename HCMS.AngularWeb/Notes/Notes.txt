@@ -1,0 +1,12 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Technical
+
+Google, Facebook not support localhost
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+For SEO
+https://developers.google.com/webmasters/ajax-crawling/docs/getting-started#5-optionally-but-importantly-test-the-crawlability-of-your-app-see-what-the-crawler-sees-with-fetch-as-googlebot
+
+https://instagram.com/oauth/authorize/?client_id=1e464640477c441e9d9b5070c131164f&amp;redirect_uri=HTTP://review.ogilvy.com.vn&amp;response_type=token
+
+2789660883.38ebfaf.a48a0f58e44440c9b1b62f1d712a7707

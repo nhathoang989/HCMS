@@ -1,0 +1,4 @@
+﻿<h3>{{ctrl.pageData.name}}</h3>
+<div ng-bind-html="ctrl.pageData.contentBody"></div>
+
+<img ng-repeat="image in ctrl.pageData.contentImages" ng-src="{{image.croppedUrl}}" /> <br />

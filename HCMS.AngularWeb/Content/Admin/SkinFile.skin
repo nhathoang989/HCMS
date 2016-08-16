@@ -1,0 +1,25 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<telerik:RadEditor runat="server" SkinID="ToolsFile" ToolsFile="~/EditorDialogs/ToolsFile.xml" BackColor="White">
+    <ImageManager UploadPaths="~/files/" ViewPaths="~/files/" DeletePaths="~/files/"
+    EnableImageEditor="true" MaxUploadFileSize="1048576" />
+    <FlashManager UploadPaths="~/files/" ViewPaths="~/files/" DeletePaths="~/files/" MaxUploadFileSize="1048576" />
+    <MediaManager UploadPaths="~/files/" ViewPaths="~/files/" DeletePaths="~/files/" MaxUploadFileSize="1048576"/>
+    <DocumentManager UploadPaths="~/files/" ViewPaths="~/files/" DeletePaths="~/files/" MaxUploadFileSize="1048576"/>
+</telerik:RadEditor>
+<telerik:RadEditor runat="server" SkinID="BasicTools" ToolsFile="~/EditorDialogs/BasicTools.xml" BackColor="White" Height="200"></telerik:RadEditor>
+<asp:Button runat="server" BackColor="AliceBlue" />

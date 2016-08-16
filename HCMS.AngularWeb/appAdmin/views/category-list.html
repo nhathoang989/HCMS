@@ -1,0 +1,81 @@
+﻿<div class="mws-panel-header">
+    <span><i class="icon-table"></i>Danh sách CHUYÊN MỤC</span>
+</div>
+<div class="mws-panel-body no-padding ">
+    <div class="dataTables_wrapper">
+        <div class="dataTables_info">
+            <button type="button" value="Update" ng-click="updateItems"
+                    class="btn btn-danger">Update</button>
+            <button type="button" value="Delete" ng-click="deleteItems" class="btn btn-danger">Delete</button>
+        </div>
+        <div class="filter0">
+            <table class="mws-table mws-datatable">
+                <tr>
+                    <td class="colOne">
+                        Vị trí
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <table id="tblProducts" class="mws-table mws-datatable">
+            <thead>
+                <tr>
+                    <th class="check">
+                        <input type="checkbox" id="chkDeleteAll" onchange="javascript:docheck();" />
+                    </th>
+                    <th class="id">
+                        id
+                    </th>
+                    <th class="title">
+                        Tên
+                    </th>
+                    <th class="title">
+                        Lượt xem
+                    </th>
+                    <th class="order">
+                        Thứ tự
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+
+            <tr data-ng-repeat="item in list-items">
+                <td class="center">
+                    <input type="checkbox" id="chkid" runat="server" onchange="checkallstatus();" />
+                </td>
+                <td>
+                    <asp:Label ID="Label1" runat="server" Text='<%#Eval("PageId") %>'></asp:Label>
+                    <asp:HiddenField ID="hdfCategoryId" runat="server" Value='<%#Eval("PageId") %>' />
+                </td>
+                <td>
+                    <asp:Label ID="Label2" runat="server" Text='<%#Eval("Title") %>'></asp:Label>
+                </td>
+                <td class="center">
+                    <asp:Label ID="Label3" runat="server" Text='<%#Eval("tba_page.Views") %>'></asp:Label>
+                </td>
+                <td class="center">
+                    <asp:TextBox ID="txtDisplayOrder" runat="server" Text='<%#Eval("tba_page.DisplayOrder") %>'
+                                 CssClass="display-order inputText"></asp:TextBox>
+                </td>
+                <td class="center">
+                    <asp:HyperLink ID="HyperLink1" NavigateUrl='<%#Eval("PageID","/admin/adminpageedit.aspx?id={0}") %>'
+                                   runat="server" CssClass="btn btn-small" Text="<i class='icon-pencil'></i>" />
+                </td>
+            </tr>
+        </table>
+
+        <!--<div class="dataTables_info">
+            <asp:Button ID="Button4" runat="server" Text="<%$Resources: Website, Save %>" OnClick="btnUpdate_click"
+                        CssClass="btn btn-danger" />
+            <asp:Button ID="Button1" runat="server" Text='<%$Resources:Website,Delete %>' OnClientClick="return confirmDelete()"
+                        OnClick="btnDelete_click" CssClass="btn btn-danger" />
+        </div>-->
+    </div>
+</div>

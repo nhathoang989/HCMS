@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="174efc5cb3f44187b78a9ab74fd95f70" Name="Diagram1">
+        <EntityTypeShape EntityType="HCRMModel.CRM_Customer" Width="1.5" PointX="2.75" PointY="9.25" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Customer_Address" Width="1.5" PointX="5" PointY="9" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Menu" Width="1.5" PointX="5.75" PointY="1" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Product_Details_Template" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Products" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Provider" Width="1.5" PointX="5.75" PointY="5.25" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Provider_Address" Width="1.5" PointX="8" PointY="5" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Receipt_Delivery" Width="1.5" PointX="0.75" PointY="9.125" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Receipt_Details" Width="1.5" PointX="3" PointY="3.375" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Receipt_Return" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Receipt_Warehouse" Width="1.5" PointX="9.75" PointY="8.75" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Role_Menu" Width="1.5" PointX="8" PointY="1.375" />
+        <EntityTypeShape EntityType="HCRMModel.CRM_Tags" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HCRMModel.sysdiagram" Width="1.5" PointX="10.75" PointY="3.75" />
+        <AssociationConnector Association="HCRMModel.FK_CRM_Customer_Address_CRM_Customer" />
+        <AssociationConnector Association="HCRMModel.FK_CRM_Role_Menu_CRM_Menu" />
+        <AssociationConnector Association="HCRMModel.FK_CRM_ReceiptDetails_CRM_Products" />
+        <AssociationConnector Association="HCRMModel.FK_CRM_Provider_Address_CRM_Provider" />
+        <AssociationConnector Association="HCRMModel.FK_CRM_ReceiptDetails_CRM_Receipt" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
